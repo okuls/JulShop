@@ -6,14 +6,26 @@ html, body{
 }
 
 .navbar{
-margin-bottom: -20px;
+    margin-bottom: -30px;
+}
+
+.wrapper{
+    min-height: 100%;
+}
+
+.wrapper-content{
+    overflow: auto;
+    padding-bottom: 180px; /* must be same height as the footer */
 }
 
 .footer{
-margin-bottom: -100px;
-background-color: white;
-height: 200px;
+    position: relative;
+    margin-top: -180px; /* negative value of footer height */
+    height: 160px;
+    clear: both;
+    background-color: white;
 }
+
 
 .section-top{
     margin: 20px;
@@ -43,4 +55,17 @@ position: absolute;
     color: white;
     font-weight: 700;
     padding: 3px
+}
+
+.section-delivery{
+    height: 300px;
+    background-color: #5cb85c;
+    text-align: center;
+    color: white;
+}
+
+.btn-success{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
 }
