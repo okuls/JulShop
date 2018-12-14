@@ -7,6 +7,34 @@ html, body{
 
 .navbar{
     margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.navbar-top {
+    min-height: 10px;
+    height: 20px;
+    background-color: #E1E8E8;
+}
+
+.navbar-main {
+    background-color: #F5FCFC;
+}
+
+
+.cart-container{
+    position: relative;
+    width: 400px;
+    padding: 15px 10px;
+}
+
+.cart-items{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: #E6F0F0;
+    z-index: 10;
+    padding: 10px;
 }
 
 .wrapper {
@@ -48,7 +76,7 @@ html, body{
     margin-bottom: 20px;
 }
 
-.add-to-card-bin{
+.add-to-cart-bin{
     position: absolute;
     bottom: 15px;
     left: 50px;
@@ -81,6 +109,3 @@ position: absolute;
     background-color: #5cb85c;
     border-color: #5cb85c;
 }
-
-
-
