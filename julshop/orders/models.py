@@ -52,7 +52,7 @@ class Order(models.Model):
 class ProductInOrder(models.Model):
     order = models.ForeignKey(Order, blank=True, null=True, default=None, verbose_name='Заказ')
     product = models.ForeignKey(Product, blank=True, null=True, default=None, verbose_name='Товар')
-    quantity = models.IntegerField(default=1, verbose_name='Колличество')
+    quantity = models.PositiveIntegerField(default=1, verbose_name='Колличество')
     price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Цена')
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Итоговая стоимость')
     is_active = models.BooleanField(default=True, verbose_name='Активирован/Деактивирован')
@@ -94,7 +94,7 @@ class ProductInCart(models.Model):
     session_key = models.CharField(max_length=128, blank=True, null=True, default=None)
     order = models.ForeignKey(Order, blank=True, null=True, default=None, verbose_name='Заказ')
     product = models.ForeignKey(Product, blank=True, null=True, default=None, verbose_name='Товар')
-    quantity = models.IntegerField(default=1, verbose_name='Колличество')
+    quantity = models.PositiveIntegerField(default=1, verbose_name='Колличество')
     price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Цена')
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Итоговая стоимость')
     is_active = models.BooleanField(default=True, verbose_name='Активирован/Деактивирован')

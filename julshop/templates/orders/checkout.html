@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6=8 col-lg-offset-2">
+                <h3 class="text-center">Товары в корзине</h3>
+                <h5 class="text-center">Общая стоиомть: {{ request.session.cart.total.amount }} руб.</h5>
+                        {{ request.session.cart.products }}
+
+                <form>
+                    <table class="table text-left">
+                        <thead>
+                        <tr>
+                            <th> Название товара</th>
+                            <th> Колличество</th>
+                            <th> Цена</th>
+                            <th> Общая стоимость</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for product_in_cart in products_in_cart %}
+                                <tr>
+                                    <td>
+                                        {{ product_in_cart.product.name }}
+                                    </td>
+                                    <td>
+                                        <input value="{{ product_in_cart.quantity }}" type="number" min="1"
+                                               class="product-in-cart-quantity">
+                                    </td>
+                                    <td>
+                                        <span class="product-price">
+                                            {{ product_in_cart.price_per_item }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="total-product-in-cart-amount">
+                                            {{ product_in_cart.total_price }}
+                                        </span>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="text-right">
+                        <b>Сумма заказа: </b> <span id="total_order_amount"></span>
+                    </div>
+                    <hr>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary btn-lg">Заказать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
